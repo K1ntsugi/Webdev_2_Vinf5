@@ -1,0 +1,77 @@
+#+TITLE: Mitschrift Webdev 2 WinterSemester 2022~2023 :uni:
+#+AUTHOR: Maximilian Groetsch
+#+STARTUP: showeverything
+
+* Di, 25.10.22 - Virtual hosts für Loadbalancing einrichten
+#+begin_src bash
+cd /etc/apache2
+cp heym.conf www-1.conf
+edit www-1.conf
+//...dreimal bis www-3
+//Document root
+cd /var/www
+for i in 1 2 3
+    do
+    mkdir www-$i
+    done
+//Schleife wiederholen jetzt mit do echo "www-$i" > www-$i/index.html; done
+for i in 4 5 6
+    do
+    echo $i
+    mkdir www-${i} // eindeutig was zum $i gehört
+    echo "www-$i" > www-$i/index.html
+    ls www.$i
+    cat www-$i/index.html
+    done
+
+// Hier fehlt was...war weg
+
+Suchen und ersetzen im gesamten Text in vi-editor
+:/i,$s/www-1/www-4/g
+
+for i in 4 5 6
+    do
+        SEDCMD="1,\$s/www-1/www-$i/g"
+        //cp www-1.conf www-$i.conf
+        sed -e $SEDCMD www-1.conf > www-$i.conf
+    done
+
+for i in {1..6}
+    do
+    a2ensite www-$i //sites enablen
+    done
+
+sudo systemctl restatart apache2
+
+
+//########################################
+vi /etc/apache2/sites-enabled/loadbalancer.conf
+
+//einfügen
+<VirtualHost */80>
+        ServerName lb.mysql-01.daas.hof-university.de
+
+        <Proxy "balancer://cluster">
+                BalancerMember http://www-1.mysql-01.daas.hof-university.de
+                //bis 3 einfügen
+                ProxySet lbmethod=proxybyrequest
+        </Proxy>
+
+        ProxyPass / balancer://cluster/
+        ProxyPassReverse / balancer://cluster/
+
+        LogLevel warn
+        CustomLog ${APACHE_LOG_DIR}/access-loadbalancer.log combined
+        ErrorLog ${APACHE_LOG_DIR}/error-loadbalancer.log
+</VirtualHost>
+
+a2ensite lb
+sudo systemctl restart apache2
+
+cd /etc/apache2
+ls  mod-enabled
+a2enmod proxy proxy_balancer proxy_html lbmethod_byrequests
+
+cd /var/log/apache2
+
+#+end_src
