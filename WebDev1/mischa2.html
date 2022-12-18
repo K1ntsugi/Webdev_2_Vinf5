@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    pre {
+        display: none;
+        font-size: larger;
+        color: blue;
+    }
+
+    article:hover pre {
+        display: block;
+    }
+
+
+
+    body {
+        background-color: grey;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    article {
+
+        background-color: rgb(241, 241, 241);
+        border-radius: 30px;
+        max-width: 900px;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <h1>WEB-DEV Klausur</h1>
+    <article>
+        <h3>1. Geben Sie das Grundgerüst eines leeren(aber gültigen) HTML-Dokuments an</h3>
+        <pre><xmp>
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Beschreibung der Seite</title>
+        </head>
+        <body>
+        </body>
+        </html>
+    </xmp></pre>
+
+
+    </article>
+    <article>
+        <h3>2. Schreiben Sie einen vollständigen HTML-HEADER mit folgenden Informationen</h3>
+        <ul>
+            <li>Der Zeichensatz sei "utf-8"</li>
+            <li>Der Titel der Website laute "Webdev1"</li>
+            <li>Der Autor der Webseite sind SIe selbst (Matrikel/PlatzNR)</li>
+            <li>Als SChlüsselworte sollen HTML, CSS, JAvascript und PHP vorkommen</li>
+            <li>Die Beschreibung sei "Lösung zu Aufgabe 2"</li>
+            <li>Der Stylesheet "webdevI.css" soll verlinkt werden</li>
+        </ul>
+        <pre><xmp>
+        <head>
+            <meta charset = "UTF-8">
+            <title>Webdev1</title>
+            <meta name= "author" content = "20201065/101">
+            <meta name = "keywords" content = "HTML, CSS, Javascript, PHP">
+            <meta name="description" content = "Lösung zu Aufgabe 2">
+            <link rel ="stylesheet" href="webdevI.css">
+        </head>
+    </xmp></pre>
+
+
+
+    </article>
+    <article>
+        <h3>3. Maskieren Sie folgende Textpassagen mit dem entsprechenden HTML-Markup</h3>
+        <ul>
+            <li>Eine Überschrift vierten Grades</li>
+            <pre><xmp><h4>Nachspeise</h4></xmp></pre>
+            <li>Ein Absatz mit Kursivtext</li>
+            <pre><xmp><p><i>Honigkuchen mit Eierlikörfüllung</i></p></xmp></pre>
+            <li>Eine nummerierte Liste</li>
+            <pre><xmp>
+            <ol>
+                <li>Ananas Baiser</li>
+                <li>Kokos-Mango-Fruchteis</li>
+                <li>Lychee-Käsekuchen</li>
+            </ol>
+            </xmp></pre>
+            <li>Ein Hyperlink auf die Homepage der Hochschule Hof</li>
+            <pre><xmp><a href = "http://www.hochschulehof.de">Hochschule Hof</a></xmp></pre>
+            <li>Eine Verknüpfung um per Mausklick direkt eine Email mit Betreff "Feedback" an die Adresse <br>
+                info@hof.university zu schreiben</li>
+            <pre><xmp><a href="mailto:info@hof-university.de">Feedback</a></xmp></pre>
+            <li>Eine Abbildung des Bildes "Feldhase.png" mit dem Alternativtext "Albrecht Dürer/ Feldhase" <br> und der
+                Bildunterschrift "Feldhase, Albrecht Dürer (1502), Aquarell auf Papier".</li>
+            <pre><xmp>
+            <figure>
+                <img src="Feldhase.png" alt="Albrecht Dürer/ Feldhase">
+                Feldhase, Albrecht Dürer (1502), Aquarell auf Papier
+            </figure>
+            </xmp></pre>
+        </ul>
+
+    </article>
+    <article>
+        <h3>4. HTML Unterscheidet zwischen Block- und Inline-elementen Erläutern sie den Unterschied</h3>
+        <pre>
+    Inline-Elemente können sich innerhalb von Block-Level Elementen oder anderen 
+    Inline-Elementen befinden. Im Gegensatz zu Block-Elementen macht der Browser 
+    keinen Zeilenumbruch vor oder nach einem Inline-Element. Das meist-genutzte 
+    Inline-Element ist sicherlich der Link
+    </pre>
+
+    </article>
+    <article>
+        <h3>5. Nennen Sie drei Elemente aus dem HTML-Standard, welche voreingestellt als Blockelemente dargestellt
+            werden
+        </h3>
+        <pre>       address, blockquote, center
+        </pre>
+
+    </article>
+    <article>
+        <h3>6. Nennen Sie drei HTML-Elemente welche voreingestellt als Inline dargestellt werden</h3>
+        <pre>       a, abbr, acronym
+        </pre>
+
+    </article>
+    <article>
+        <h3>7. Formulieren Sie mit Hilfe von CSS</h3>
+        <ul>
+            <li>Die Schriftart des gesamten Dokuments sei Arial.</li>
+            <pre><xmp>
+            *{
+               font.family: Arial;
+             }
+        </xmp></pre>
+            <li>Die Schriftgröße von span-Elementen der Klasse "big" sei 24pt.</li>
+            <pre><xmp>
+            span .big{
+                    font-size: 24pt;
+                    } 
+        </xmp></pre>
+            <li> Alle Bilder erhalten eine zwei Pixel breite Umrandung in der Farbe Hellgrau, sowie eine maximale Breite
+                von 100 Pixel</li>
+            <pre><xmp>
+            img{
+                border: 2px solid lightgrey;
+                max-width: 100px;
+               }
+        </xmp></pre>
+            <li>Fährt man mit der Maus über ein Bild, so ändert sich die Farbe des Randes in Schwarz</li>
+            <pre><xmp>
+            img:onhover{
+                        border: 2px solid black;
+                        }
+        </xmp></pre>
+        </ul>
+
+    </article>
+    <article>
+        <h3>8. Erstellen Sie in HTML ein Eingabeformular mit einem Textfeld für einen Buchstabenzahlenkode und einer
+            Schaltfläche zum Abschicken. Stellen Sie sicher, dass alle Eingabezeichen im Textfeld stets in Großschrift
+            umgewandelt werden. Verwenden Sie dazu Javascript</h3>
+        <pre><xmp>
+            <body>  
+                    <input type="text" id="inputTxt" value="test" />
+                    <button onclick="foo()">Absenden</button>
+                    <input type="button" value="Absenden" onclick="foo()" />
+               
+            </body>
+            <script>
+                function foo() {
+                    let text = document.getElementById("inputTxt").value;
+                    let result = text.toUpperCase();
+                    document.getElementById("inputTxt").value = result;
+                }
+            </script>
+            </xmp></pre>
+    </article>
+
+    <article>
+        <h3>9. Schreiben Sie ein Javascript, welches alle Mausklicks eines Benutzers auf der gesamten Webseite zählt.
+            Zur
+            permanenten Ausgabe des Zählerstandes, soll durch ihr Script, am Ende der Webseite, eine Überschrift 6ten
+            Grades, mithilfe der Javascipt-DOM API, hinzugefügt werden. </h3>
+        <p>Hinweis: Bitte nur Javascript-Code angeben. HTML ist nicht gefordert</p>
+        <pre><xmp>
+            <script>
+                const footer = document.footer
+                let newH6 = document.createElement("h6")
+                footer.appendChild(newH6)
+                var count = 0
+                newH6.innerText = count
+                document.addEventListener("click", () => {
+                    count++
+                    newH6.innerText = count
+                })
+            </script>
+
+            </xmp></pre>
+    </article>
+    <article>
+        <h3>10. Erzeugen Sie ein Javascript-Objekt mit einer Masse von 67 kg und einer Beschleunigung von 0.59 m/s2,
+            sowie einer Methode, welche die wirkende Kraft zurückliefert.</h3>
+        <p>Hinweis: F=m*a </p>
+        <pre><xmp>
+            <script>
+                const f = { Masse: 67, Beschleunigung: 0.59 };
+                //alert(f.Masse * f.Beschleunigung);
+                document.getElementById("test").innerHTML = f.Masse * f.Beschleunigung;
+            </script>
+        </xmp></pre>
+    </article>
+    <article>
+        <h3>11. Was bedeuten die Abkürzungen URN, URL und URI. Wie hängen diese zusammen? Geben Sie zu URN und URL
+            jeweils ein Beispiel an.</h3>
+        <pre>
+            URN = Uniform Ressource Naming -> urn:nbn:de:101:1-2019072802401757702913
+            URI = Uniform Ressource Identifyer
+            URL = Uniform Ressource Locater -> https://blog.beispiel.de        
+        </pre>
+    </article>
+    <article>
+        <h3>12. Erstellen Sie ein php-Script (counter.php), welches einen Zählerstand in einer Datei speichert und
+            ausgibt. Bei jedem Aufruf soll der gespeicherte Zählerstand in Einerschritten inkrementiert werden.</h3>
+        <p>Hinweis: Außer dem Zahlenwert soll das Script nichts weiter ausgeben, auch kein HTML-Markup. Dann ergeben
+            sich in etwa fünf bis zehn Zeilen Quelltext</p>
+        <pre><xmp>
+
+            </xmp></pre>
+    </article>
+    <article>
+        <h3>13. Erstellen Sie ein Javascript welches das php-Script aus Aufgabe 12 mittles XML HttpRequest aufruft und
+            den Zählerstand im Browserfenster so ausgibt, dass jede Dezimalstelle des Zahlenwertes in einen eigenen
+            HTML-Element ausgegeben wird. Hat der Zählerstand zum Beispiel den Wert 100, kann das erzeugte HTML dazu so
+            aussehen</h3>
+        <p>
+            <xmp>
+                <div><span><b>1</b></span><span><b>0</b></span></div><span><b>0</b></span>
+            </xmp>
+        <pre><xmp>
+                
+            </xmp></pre>
+        </p>
+    </article>
+    <article>
+        <h3>14. Sie betreiben eine Webseite für eine private Bildergalerie. Mittlerweile haben sich dort nicht weniger
+            als 4000 hochauflösende Fotos (a 8 Megapixel mit 32bit Farbtiefe) angehäuft. Zur besseren Übersicht zeigen
+            Sie die Bilder nicht in Originalgröße an, sondern in einer verkleinerten Darstellung (hier: Kacheln a
+            100x100 Pixel). Ein typischer Betrachter benutzt eine Internet-Leitung mit 16 MBit/s.</h3>
+        <p>Hinweis: Bildformat und Kompression sollen zur Vereinfachung der Rechnung außer acht gelassen werden</p>
+        <ol type="a">
+            <li> Wie lange würde der vollständige Aufbau der Webseite dauern, wenn die Bilder vom Browser im Original
+                heruntergeladen und lokal skaliert werden? </li>
+            <pre><xmp>
+
+            </xmp></pre>
+            <li>Wie lange würde der vollständige Aufbau der WEbseite dauern, wenn eine skalierte Kopie der Bilder
+                bereits auf dem Server vorgehalten wird?</li>
+            <pre><xmp>
+
+            </xmp></pre>
+            <li>Wie viele Bilder können auf einmal im Browser höchstens angezeigt werden, wenn die maximale
+                Anzeigefläche 1600 x 1000 Pixel beträgt? Wie lange würde der Aufbau Ihrer Webseite nun dauern, wenn sie
+                eine seitenweise Darstellung ermöglichen?</li>
+            <pre><xmp>
+
+            </xmp></pre>
+        </ol>
+    </article>
+
+</body>
+
+
+</html>
