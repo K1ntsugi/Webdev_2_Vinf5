@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="157ff7f9-ad2d-4358-a561-6c30f1c04356" name="Heym" url="http://www.vinf-heym.de">
+        <fileTransfer rootFolder="/home/vi-mgroetsch" accessType="SFTP" host="vinf-heym.de" port="22" sshConfigId="9029ede8-90dc-4e9e-bb23-394c84530fd0" sshConfig="vi-mgroetsch@vinf-heym.de:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
